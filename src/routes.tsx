@@ -7,15 +7,16 @@ import { NotificationContainer } from "react-notifications";
 /**
  * Main App routes.
  */
-let userLocal: any = localStorage.getItem("user");
-let user = JSON.parse(userLocal);
-  const routes = () => (
-    <div>
-      <Switch>
-        <Route exact path="/" component={ Demo } />
-      </Switch>
-    </div>
-  );
+const routes = () => (
+  <div>
+    <Switch>
+      <Route exact path="/demo" component = { Demo } />
+      {/* <Route path="/demo">
+            <Demo />
+      </Route> */}
+    </Switch>
+  </div>
+);
 
 
 const routing = function createRouting() {
@@ -24,7 +25,7 @@ const routing = function createRouting() {
       <>
         <NotificationContainer />
         <Router>
-          {/* <ErrorBoundary>{routes()}</ErrorBoundary> */}
+          {routes()}
         </Router>
       </>
     );
